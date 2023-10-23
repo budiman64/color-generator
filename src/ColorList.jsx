@@ -1,8 +1,12 @@
 import React from 'react'
+import SingleColor from './SingleColor'
+import { nanoid } from 'nanoid'
 
-const Colorlist = () => {
+const Colorlist = ({colors}) => {
   return (
-    <div>Colorlist</div>
+    <section>
+      {colors.map((color, index) => <SingleColor key={nanoid()} color={color} index={index}/>)}
+    </section>
   )
 }
 

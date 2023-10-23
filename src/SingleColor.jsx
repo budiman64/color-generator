@@ -1,9 +1,15 @@
 import React from 'react'
 
-const SingleColor = () => {
+const SingleColor = ({color, index}) => {
+
+  console.log(color);
+  const {hex, weight} = color;
   return (
-    <div>SingleColor</div>
-  )
+    <article className='color' style={{ background: `#${hex}` }}>
+      <p>{weight}%</p>
+      <p>{hex}</p>
+    </article>
+  ) 
 }
 
 export default SingleColor
