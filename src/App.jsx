@@ -2,13 +2,19 @@ import Form from "./Form";
 import Colorlist from "./Colorlist";
 import Values from "values.js";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 const App = () => {
   const [colors, setColors] = useState(new Values('#6c2d2d').all(10));
+  const changeColor = (color) => {
+    console.log(color);
+    setColors(new Values(color).all(10));
+  };
 
   return <main>
-    <Form />
+    <Form changeColor={changeColor}/>
     <Colorlist colors={colors}/>
+    <ToastContainer position="top-center"/>
   </main>;
 };
 export default App;

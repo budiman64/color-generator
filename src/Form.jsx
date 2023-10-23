@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({changeColor}) => {
     const [color, setColor] = useState('');
-    const handleSubmit = (e) => {};
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        changeColor(color);
+    };
 
     return (
         <section className='container'>
