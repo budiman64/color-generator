@@ -19,11 +19,11 @@ const SingleColor = ({color, index}) => {
 
   return (
     <article className='color' 
-    style={{ background: `#${hex}` }}
+    style={{ background: `#${hex}`, color: index > 10 ? 'white' : 'black' }}
     onClick={copyToClipboard}
     >
       <p>{weight}%</p>
-      <p>{hex}</p>
+      <p>#{hex}</p>
     </article>
   ) 
 }
