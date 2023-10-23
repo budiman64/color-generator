@@ -7,8 +7,13 @@ import { ToastContainer, toast } from "react-toastify";
 const App = () => {
   const [colors, setColors] = useState(new Values('#6c2d2d').all(10));
   const changeColor = (color) => {
-    console.log(color);
-    setColors(new Values(color).all(10));
+    try {
+      const newColors = new Values(color).all(10);
+      setColors(newColors);
+    } catch (error) {
+      toast.error(error.message)
+    }
+    
   };
 
   return <main>
